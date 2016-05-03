@@ -1,0 +1,82 @@
+html,
+body {
+  height: 100%;
+  /* The html and body elements cannot have any padding or margin. */
+}
+
+/* Wrapper for page content to push down footer */
+#wrap {
+  min-height: 100%;
+  height: auto;
+  /* Negative indent footer by its height */
+  margin: 0 auto -60px;
+  /* Pad bottom by footer height */
+  padding: 0 0 60px;
+}
+
+/* Set the fixed height of the footer here */
+#footer {
+  height: 60px;
+  background-color: #f5f5f5;
+}
+
+/* Tweet Styling*/
+.tweet {
+  list-style: none;
+  clear: both;
+}
+.tweet img {
+  float: left;
+  height: 50px;
+  width: auto;
+  margin: 0 15px 15px 0;
+}
+.tweet a {
+  color: #333;
+}
+.tweet-text {
+  float: left;
+}
+.tweet-form{
+  padding-bottom:20px;
+  border-bottom: 1px solid #00aced;
+  margin-bottom: 30px;
+}
+
+
+/* Custom page CSS
+-------------------------------------------------- */
+/* Not required for template or sticky footer method. */
+
+#wrap > .container {
+  padding: 60px 15px 0;
+}
+.container .text-muted {
+  margin: 20px 0;
+}
+
+#footer > .container {
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+code {
+  font-size: 80%;
+}
+
+.tweetbox {
+  padding: 7px;
+}
+
+.tweetbox img {
+  float: left;
+  height: 48px;
+  width: 48px;
+  content:url("http://lorempixel.com/48/48");
+}
+.content {
+  margin-left: 60px;
+}
+.content .by {
+  font-weight: bold;
+}

@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  
+  <div class="page-header">
+    <h1>{{title}}</h1>
+  </div>
+  <div class="row">
+    <div class="col-md-3">
+      <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
+      <b>Your Name</b><br>
+      100 followers
+    </div>
+    
+    <div class="col-md-9">
+      {% if showForm %}
+      <div class="tweet-form">
+
+        <form action="/tweets" method="POST">
+          <label for="name_field">Name:</label>
+          <input name="name" type="text" value="{{name}}" id="name_field" />
+
+          <label for="text_field">Text:</label>
+          <input name="text" type="text" id="text_field" style="width: 350px;" />
+
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+      {% endif %}
+    <!-- display tweets here -->
+      <div id="tweet-list">
+      {% for tweet in tweets %}
+        <li id="{{tweet.id}}" class="tweet">
+          <img src=" {{ tweet.pictureurl }} " />
+          <div class="tweet-text">
+            <a href="/users/{{tweet.name}}"><strong>{{tweet.name}}</strong></a><br/>
+            <a href="/tweet/{{tweet.id}}">{{tweet.content}}</a>
+          </div>
+        </li>
+      {% endfor %}
+      </div>  
+    </div>
+  </div>
+    
+{% endblock %}
