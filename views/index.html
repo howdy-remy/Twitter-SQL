@@ -8,7 +8,7 @@
   <div class="row">
     <div class="col-md-3">
       <img src="https://pbs.twimg.com/profile_images/2450268678/olxp11gnt09no2y2wpsh_normal.jpeg"><br>
-      <b>Your Name</b><br>
+      <b>Kimber Kathy</b><br>
       100 followers
     </div>
     
@@ -33,8 +33,17 @@
         <li id="{{tweet.id}}" class="tweet">
           <img src=" {{ tweet.pictureurl }} " />
           <div class="tweet-text">
-            <a href="/users/{{tweet.name}}"><strong>{{tweet.name}}</strong></a><br/>
+            <a href="/users/{{tweet.name}}"><strong>{{tweet.name}}</strong></a>
+            
+<!--             {% if tweet.parent != undefined %}
+ -->              retweeted from {{tweet.parent}}
+<!--             {% endif %}
+ -->
+            <br/>
             <a href="/tweet/{{tweet.id}}">{{tweet.content}}</a>
+            <form action="/retweet" method="post">
+              <button name="id" value="{{tweet.id}}">Retweet</button>
+            </form>
           </div>
         </li>
       {% endfor %}
